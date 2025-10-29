@@ -1,0 +1,164 @@
+/* 🌼 Bright Yellow-White Theme */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+
+    /* Keep background image + yellow-white overlay */
+    background:
+        linear-gradient(to bottom right, rgba(255, 249, 230, 0.3), rgba(255, 224, 102, 0.2)),
+        url('/static/skillsss.jpg.png') no-repeat center center fixed;
+    
+    background-size: cover; /* Ensures full image is visible without cropping */
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    color: #222;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.5s ease;
+}
+
+/* 🟡 Container (main content box) */
+.container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 15px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 8px 25px rgba(255, 208, 0, 0.4);
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+}
+
+/* 🟨 Inputs */
+input, select, textarea {
+    padding: 12px;
+    margin: 10px 0;
+    border: 2px solid #ffe066;
+    border-radius: 8px;
+    width: 100%;
+    font-size: 16px;
+    background: #fffdf5;
+    color: #333;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: #ffd54f;
+    box-shadow: 0 0 6px rgba(255, 208, 0, 0.5);
+}
+
+/* 🟡 Buttons */
+input[type="submit"], button {
+    background: #ffd54f;
+    color: #222;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 18px;
+    transition: 0.3s;
+}
+
+input[type="submit"]:hover, button:hover {
+    background: #ffeb3b;
+    transform: scale(1.05);
+}
+
+/* 💬 Chat Box */
+.chat-box {
+    background: rgba(255, 255, 255, 0.9);
+    color: #000;
+    padding: 15px;
+    border-radius: 12px;
+    max-height: 350px;
+    overflow-y: auto;
+    margin-bottom: 15px;
+    text-align: left;
+    box-shadow: 0 6px 15px rgba(255, 208, 0, 0.3);
+}
+
+.chat-message {
+    padding: 10px 15px;
+    border-radius: 12px;
+    margin: 8px 0;
+    max-width: 75%;
+    word-wrap: break-word;
+    display: inline-block;
+}
+
+/* Your messages (right side) */
+.chat-message.you {
+    background: #fff176;
+    color: #222;
+    margin-left: auto;
+    display: block;
+    text-align: right;
+}
+
+/* Other messages (left side) */
+.chat-message.other {
+    background: #fffde7;
+    color: #333;
+    margin-right: auto;
+    display: block;
+    text-align: left;
+}
+
+.timestamp {
+    font-size: 12px;
+    opacity: 0.7;
+    display: block;
+    margin-top: 3px;
+}
+
+/* 💫 Dashboard Match Cards */
+.match-card {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 20px;
+    margin: 15px auto;
+    border-radius: 12px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 6px 20px rgba(255, 208, 0, 0.35);
+    transition: transform 0.4s ease, background 0.3s;
+    animation: slideIn 0.8s ease;
+}
+
+.match-card:hover {
+    transform: translateY(-8px) scale(1.05);
+    background: rgba(255, 255, 255, 0.95);
+}
+
+/* 🎠 Carousel */
+.matches-carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 15px 5px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none; /* Firefox */
+}
+.matches-carousel::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+}
+
+.match-card {
+    min-width: 250px; /* for horizontal carousel */
+    flex-shrink: 0;
+    scroll-snap-align: center;
+}
+
+/* ✨ Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { transform: translateX(100px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
